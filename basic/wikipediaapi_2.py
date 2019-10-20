@@ -1,6 +1,7 @@
 import wikipediaapi
 from hanziconv import HanziConv
 import requests
+import hashlib
 
 wiki = wikipediaapi.Wikipedia('zh')
 # pages = ['热敏电阻']
@@ -9,6 +10,7 @@ pages = ['感測器', '無線感測網路', '自動調溫器', '智能感測器'
 for page in pages:
     page_content = wiki.page(page)
     data = {
+        'id': hashlib.sha224(page_content.title.encode('utf-8')).hexdigest(),
         'title': page_content.title,
         'summary_txt_cjk': HanziConv.toSimplified(page_content.summary),
         'text_txt_cjk': HanziConv.toSimplified(page_content.text),
