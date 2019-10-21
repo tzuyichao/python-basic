@@ -29,7 +29,7 @@ y = np.zeros((len(sentences), len(chars)), dtype=np.bool)
 for i, sentence in enumerate(sentences):
     for t, char in enumerate(sentence):
         x[i, t, char_indices[char]] = 1
-    x[i, char_indices[char]] = 1
+    y[i, char_indices[next_chars[i]]] = 1
 print(x.shape)
 print(y.shape)
 
@@ -60,7 +60,6 @@ for epoch in range(1, 60):
     start_index = random.randint(0, len(text) - maxlen - 1)
     generated_text = text[start_index: start_index + maxlen]
     print('--- 隨機初始文字: "' + generated_text + '"')
-
     for temperature in [0.2, 0.5, 1.0, 1.2]:
         print('------ temperature:', temperature)
         sys.stdout.write(generated_text)
