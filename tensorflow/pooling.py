@@ -1,5 +1,11 @@
 import tensorflow.compat.v1 as tf
 
+y = tf.constant([[
+    [[1], [2], [3]],
+    [[1], [2], [3]],
+]], dtype=tf.float32)
+print(y)
+
 x = tf.constant(
     [[
         [[1], [2], [3], [4]],
