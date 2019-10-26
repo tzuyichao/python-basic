@@ -23,6 +23,7 @@ def showing(filename, title, i):
     plt.axis("off")
     plt.imshow(im_list)
 
+print('query 1')
 filename = "/Users/tzuyichao/lab/data/cat-and-dog/training_set/training_set/cats/cat.3591.jpg"
 plt.figure(figsize=(20, 10))
 for i in range(1):
@@ -32,6 +33,7 @@ results = predict(filename, 10)
 for result in results:
     print(result)
 
+print('query 2')
 filename = "/Users/tzuyichao/lab/data/cat-and-dog/training_set/training_set/dogs/dog.803.jpg"
 plt.figure(figsize=(20, 10))
 for i in range(1):
