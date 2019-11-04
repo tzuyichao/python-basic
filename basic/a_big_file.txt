@@ -1,0 +1,3 @@
+this is big file example file
+str2 will replace to 'str2'
+'str\1' should not exist in file file
