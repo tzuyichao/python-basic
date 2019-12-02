@@ -4,12 +4,12 @@ class ProductAPITasks(TaskSet):
   @task(1)
   def iabg_zh(self):
     headers={'content-type': 'application/json'}
-    self.client.post("/product", json={"lang": "zh-tw", "bu": "IABG"}, headers=headers)
+    self.client.post("/product", json={"lang": "zh-tw", "bg": "IABG"}, headers=headers)
 
   @task(2)
   def iabg_cn(self):
     headers={'content-type': 'application/json'}
-    self.client.post("/product", json={"lang": "zh-cn", "bu": "IABG"}, headers=headers)
+    self.client.post("/product", json={"lang": "zh-cn", "bg": "IABG"}, headers=headers)
 
 class FaQTest(HttpLocust):
   task_set = ProductAPITasks
