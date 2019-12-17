@@ -10,7 +10,7 @@ api = Api(app, version='1.0', title='API test', description='Simple API Doc')
 
 ns = api.namespace('test', description='TODO and hello world API')
 
-todo = api.model('Model', {
+todo = api.model('Model TODO', {
     'id': fields.Integer(readonly=True, description='task uuid'),
     'task': fields.String(required=True, description='task detail')
 })
