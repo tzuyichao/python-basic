@@ -17,3 +17,14 @@ better or worse.
 doc = nlp(content)
 for sentences in doc.sents:
     print(sentences.text)
+
+candidate_pos = ['NOUN', 'PROPN', 'VERB']
+sentences = []
+for sent in doc.sents:
+    selected_words = []
+    for token in sent:
+        if token.pos_ in candidate_pos and token.is_stop is False:
+            selected_words.append(token)
+    sentences.append(selected_words)
+
+print(sentences)
