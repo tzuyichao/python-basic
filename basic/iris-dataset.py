@@ -10,3 +10,6 @@ iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
 iris_df["species"] = iris.target
 
 print(iris_df.head())
+
+# X = iris.data[:, :2]
+# print(X)
