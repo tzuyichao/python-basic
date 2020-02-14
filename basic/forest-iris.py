@@ -20,6 +20,8 @@ print(test_y)
 accuracy = metrics.accuracy_score(test_y, test_y_predicted)
 print('Accuracy: ', accuracy)
 
+# https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html
+# Note: this implementation is restricted to the binary classification task.
 # multiclass format is not supported
 # fpr, tpr, thresholds = metrics.roc_curve(test_y, test_y_predicted)
 # auc = metrics.auc(fpr, tpr)
