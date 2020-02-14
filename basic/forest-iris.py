@@ -18,5 +18,9 @@ print(test_y_predicted)
 print(test_y)
 
 accuracy = metrics.accuracy_score(test_y, test_y_predicted)
-print(accuracy)
+print('Accuracy: ', accuracy)
 
+# multiclass format is not supported
+# fpr, tpr, thresholds = metrics.roc_curve(test_y, test_y_predicted)
+# auc = metrics.auc(fpr, tpr)
+# print("AUC: ", auc)
