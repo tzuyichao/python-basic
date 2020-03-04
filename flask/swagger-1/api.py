@@ -8,7 +8,8 @@ app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(app, version='1.0', title='API test', description='Simple API Doc')
 
-ns = api.namespace('test', description='TODO and hello world API')
+ns = api.namespace('test', description='TODO world API')
+ns_hell = api.namespace('hell', description='hello world API')
 
 todo = api.model('Model TODO', {
     'id': fields.Integer(readonly=True, description='task uuid'),
@@ -46,7 +47,7 @@ DAO.create({'task': 'Build an API'})
 DAO.create({'task': '?????'})
 DAO.create({'task': 'profit!'})
 
-@ns.route('/hello')
+@ns_hell.route('/hello')
 class HelloWorld(Resource):
     def get(self):
         return {'msg': 'hello, world!'}
@@ -68,7 +69,7 @@ class TodoList(Resource):
         return DAO.create(api.payload), 201
 
 @ns.route('/todo/<int:id>')
-@ns.response(404, 'Todo not found')
+#@ns.response(404, 'Todo not found')
 @ns.param('id', 'The task identifier')
 class Todo(Resource):
     '''Show a single todo item and lets you delete them'''
