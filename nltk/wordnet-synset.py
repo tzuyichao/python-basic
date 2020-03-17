@@ -14,4 +14,22 @@ for synset in wn.synsets('trunk'):
     print('Root Hypernyms: ', synset.root_hypernyms())
     print('Hypernyms: ', synset.hypernyms())
     print('Hyponyms: ', synset.hyponyms())
+    print('Min Depth: ', synset.min_depth())
     print()
+
+right = wn.synset('right_whale.n.01')
+minke = wn.synset('minke_whale.n.01')
+orca = wn.synset('orca.n.01')
+tortoise = wn.synset('tortoise.n.01')
+novel = wn.synset('novel.n.01')
+
+print('Right Whale and Minke Whale lowest common hyernyms: ', right.lowest_common_hypernyms(minke))
+print('Right Whale and Orca lowest common hyernyms: ', right.lowest_common_hypernyms(orca))
+print('Right Whale and Tortoise lowest common hyernyms: ', right.lowest_common_hypernyms(tortoise))
+print('Right Whale and Novel lowest common hyernyms: ', right.lowest_common_hypernyms(novel))
+
+print('Right Whale and Right Whale Path Similariy: ', right.path_similarity(right))
+print('Right Whale and Minke Whale Path Similariy: ', right.path_similarity(minke))
+print('Right Whale and Orca Path Similariy: ', right.path_similarity(orca))
+print('Right Whale and Tortoise Path Similariy: ', right.path_similarity(tortoise))
+print('Right Whale and Novel Path Similariy: ', right.path_similarity(novel))
