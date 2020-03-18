@@ -1,11 +1,16 @@
 # https://stackoverflow.com/questions/38232406/selenium-in-python-selecting-an-option
 from selenium import webdriver
+import datetime
+
+now = datetime.datetime.now()
+meetingDate = now + datetime.timedelta(days=29)
+meetingDateString = "{}/{}/{}".format(meetingDate.year, meetingDate.month, meetingDate.day)
 
 driver = webdriver.Chrome()
 driver.get("http://dgoa/MBS/MBSGF01/Default.aspx?newversion=1")
 
 ddlUseDateElement = driver.find_element_by_name("ddlUseDate")
-ddlUseDateElement.send_keys("2020/4/16")
+ddlUseDateElement.send_keys(meetingDateString)
 txtBeginTimeElement = driver.find_element_by_name("txtBeginTime")
 txtBeginTimeElement.send_keys("1530")
 txtEndTimeElement = driver.find_element_by_name("txtEndTime")
