@@ -26,3 +26,7 @@ print(tempa_df.iloc[1])
 print(tempa_df.loc['2016-04-02'])
 print(tempa_df.iloc[[1, 3, 5]])
 print(tempa_df.iloc[[1, 3, 5]].Difference)
+
+print(tempa_df.Missoula > 82)
+# Boolean Selection return true record
+print(tempa_df[tempa_df.Missoula > 82])
