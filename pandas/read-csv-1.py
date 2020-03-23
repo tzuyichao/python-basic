@@ -1,4 +1,5 @@
 import pandas as pd
+from matplotlib import pyplot as plt
 
 df = pd.read_csv('../data/goog.csv')
 print(df)
@@ -18,3 +19,5 @@ df = pd.read_csv('../data/goog.csv', parse_dates=['Date'], index_col='Date')
 print(df)
 print(df.index)
 
+df.Close.plot()
+plt.show()
