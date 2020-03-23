@@ -21,3 +21,8 @@ print(tempa_df['Missoula'] - tempa_df['Philadephia'])
 print('Add Difference colum from two cloumn\'s computation')
 tempa_df['Difference'] = tempa_df['Missoula'] - tempa_df['Philadephia']
 print(tempa_df)
+
+print(tempa_df.iloc[1])
+print(tempa_df.loc['2016-04-02'])
+print(tempa_df.iloc[[1, 3, 5]])
+print(tempa_df.iloc[[1, 3, 5]].Difference)
