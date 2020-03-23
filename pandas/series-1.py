@@ -16,3 +16,4 @@ temp_diff = temps1 - temps2
 
 print('temp_diff:', temp_diff)
 print(temp_diff[2])
+print('temperature diff mean:', temp_diff.mean())
