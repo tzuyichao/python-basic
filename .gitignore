@@ -35,3 +35,4 @@ HELP.md
 
 /.ipynb_checkpoints/
 
+Locust/__pycache__/hr_recommendation.cpython-37.pyc
