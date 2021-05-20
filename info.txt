@@ -1,0 +1,1 @@
+http://www.twse.com.tw/exchangeReport/MI_INDEX?response=csv&date=20210510&type=ALL
