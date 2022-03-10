@@ -86,10 +86,10 @@ def server_loop(local_host, local_port, remote_host, remote_port, receive_first)
     print("[*] Listening on %s:%d" % (local_host, local_port))
     server.listen(5)
     while True:
-        client_socket, addr = socket.accept()
+        client_socket, addr = server.accept()
         line = "> Received incoming connection from %s:%d" % (addr[0], addr[1])
         print(line)
-        proxy_thread = threading.Thread(target=proxy_handler, args=(client_socket, remote_host, remote_port))
+        proxy_thread = threading.Thread(target=proxy_handler, args=(client_socket, remote_host, remote_port, receive_first))
         proxy_thread.start()
 
 def main():
@@ -97,10 +97,11 @@ def main():
         print("Usage: ./ch02-proxy.py [localhost] [localport]", end='')
         print("[remotehost] [remoteport] [receive_first")
         print("Example: ./ch02-proxy.py 127.0.0.1 9000 10.12.132.1 9000 True")
+        sys.exit(0)
     local_host = sys.argv[1]
-    local_port = sys.argv[2]
+    local_port = int(sys.argv[2])
     remote_host = sys.argv[3]
-    remote_port = sys.argv[4]
+    remote_port = int(sys.argv[4])
     receive_first = sys.argv[5]
 
     if "True" in receive_first:
