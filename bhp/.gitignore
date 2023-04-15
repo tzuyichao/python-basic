@@ -39,6 +39,3 @@ HELP.md
 
 ### environments 
 /venv3/
-*.key
-/Lib/
-venv/
