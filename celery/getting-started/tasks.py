@@ -1,7 +1,7 @@
 from celery import Celery
 from celery.utils.log import get_task_logger
 
-app = Celery('tasks', broker='pyamqp://guest@localhost//', backend="redis://localhost:6379/0")
+app = Celery('tasks', broker='redis://localhost:6379/0', backend="redis://localhost:6379/1")
 
 app.conf.update(
     result_expires=300,

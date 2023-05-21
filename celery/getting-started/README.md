@@ -20,3 +20,5 @@ r.ready()
 r.get(timeout=10)
 ```
 
+[Celery + Redis](https://riptutorial.com/celery/example/23628/celery-plus-redis)
+
