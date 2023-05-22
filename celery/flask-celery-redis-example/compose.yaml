@@ -20,10 +20,23 @@ services:
     image: redis
     hostname: redis
 
-  worker:
+  worker1:
     build:
       context: ./api
-    hostname: worker
+    hostname: worker1
+    entrypoint: celery
+    command: -A celery_app.celery worker --loglevel=info
+    volumes:
+      - ./api:/app
+    links:
+      - redis
+    depends_on:
+      - redis
+  
+  worker2:
+    build:
+      context: ./api
+    hostname: worker2
     entrypoint: celery
     command: -A celery_app.celery worker --loglevel=info
     volumes:
