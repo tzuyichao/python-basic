@@ -1,17 +1,17 @@
-from confuent_kafka import Prodecer
+from confluent_kafka import Producer
 import time
 
-if __name__ == '__name__':
+if __name__ == '__main__':
     conf = {
-        'bootstrap.servers': '<your_bootstrap_servers>',  # 例如: 'localhost:9092'
+        'bootstrap.servers': 'KAFKA_BROKER',  # 例如: 'localhost:9092'
         'security.protocol': 'SASL_PLAINTEXT',  # or 'SASL_SSL'
-        'sasl.mechanisms': 'PLAIN',
-        'sasl.username': '<your_sasl_username>',  # 你的登入驗證名稱
-        'sasl.password': '<your_sasl_password>',  # 你的登入驗證密碼
+        'sasl.mechanisms': 'SCRAM-SHA-512',
+        'sasl.username': 'ACCOUNT',  # 你的登入驗證名稱
+        'sasl.password': 'PASSWD',  # 你的登入驗證密碼
         'group.id': '<your_group_id>',  # 你的 group id
         'client.id': 'python_producer'
     }
-    producer = Prodecer(**conf)
+    producer = Producer(**conf)
     def delivery_callback(err, msg):
         if err:
             print(f"Message delivery failed: {err}")
@@ -19,5 +19,6 @@ if __name__ == '__name__':
             print(f"Message delivered to {msg.topic()} [{msg.partition()}]")
     key = "key1"
     value = "value1"
-    producer.produce('topic1', key=key, value=value, callback=delivery_callback)
+    producer.produce('test.testtopic.v0', key=key, value=value, callback=delivery_callback)
     producer.flush()
+    print("Send...")
