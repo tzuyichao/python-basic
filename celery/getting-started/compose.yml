@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+  worker:
+    build:
+      context: .
+      dockerfile: Worker_Dockerfile
+    depends_on:
+      - redis
+  client:
+    build:
+      context: .
+      dockerfile: Client_Dockerfile
+    depends_on:
+      - worker
