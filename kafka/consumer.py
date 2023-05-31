@@ -1,13 +1,19 @@
 from confluent_kafka import Consumer, KafkaError, KafkaException
 import sys
+from dotenv import load_dotenv
+import os
 
 if __name__ == '__main__':
+    load_dotenv('.env')
+    kafka_bootstrap_servers = os.getenv('KAFKA_BOOTSTRAP_SERVER')
+    kafka_account = os.getenv('KAFKA_ACCOUNT')
+    kafka_password = os.getenv('KAFKA_PASSWORD')
     conf = {
-        'bootstrap.servers': 'YOUR_KAFKA_BROKER:9093', 
+        'bootstrap.servers': kafka_bootstrap_servers, 
         'security.protocol': 'SASL_PLAINTEXT',
         'sasl.mechanisms': 'SCRAM-SHA-512',
-        'sasl.username': 'ACCOUNT', 
-        'sasl.password': 'PASSWORD',
+        'sasl.username': kafka_account, 
+        'sasl.password': kafka_password,
         'group.id': '<your_group_id>',
         'client.id': 'python_consumer'
     }
