@@ -1,6 +1,6 @@
 #!/bin/bash
 
-N=10
+N=${1:-10}
 
 for ((i=1; i<=N; i++)); do
        tag_name="produce$i"
