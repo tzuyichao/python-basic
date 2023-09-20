@@ -1,14 +1,12 @@
 #!/bin/bash
 
 N=${1:-10}
+IMAGE_NAME="producer"
+
+sudo docker build . -t $IMAGE_NAME
 
 for ((i=1; i<=N; i++)); do
-       tag_name="produce$i"
-       sudo docker build . -t $tag_name
-done
-
-for ((i=1; i<=N; i++)); do
-	tag_name="produce$i"
-	sudo docker run -d $tag_name
+	container_name="producer$i"
+	sudo docker run -d $IMAGE_NAME --name $container_name
 done
 
