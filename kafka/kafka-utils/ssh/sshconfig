@@ -1,0 +1,5 @@
+Host kafka20230910.internal.cloudapp.net
+	Hostname kafka20230910.internal.cloudapp.net
+	Port 22
+	User terence
+

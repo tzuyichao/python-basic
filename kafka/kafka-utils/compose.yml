@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  kafka-utils:
+    build: .
+    volumes:
+      - ./ssh/sshconfig:/root/.ssh/config
+      - ./cluster_data/data_gov.yaml:/etc/kafka_discovery/data_gov.yaml
+

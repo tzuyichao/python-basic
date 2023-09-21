@@ -6,5 +6,5 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "multithread_message_produce.py", "1000", "100000"]
+CMD ["python", "multithread_message_produce.py", "1000", "10"]
 

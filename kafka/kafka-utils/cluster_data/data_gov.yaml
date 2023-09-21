@@ -1,0 +1,7 @@
+---
+  clusters:
+    test:
+      broker_list:
+        - "kafka20230910.internal.cloudapp.net:9092"
+      zookeeper: "kafka20230910.internal.cloudapp.net:2181"
+
