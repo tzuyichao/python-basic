@@ -15,6 +15,11 @@ if [[ ! -f ./cluster_data/data_gov.yaml ]]; then
 	exit 1
 fi
 
+if [ "$#" -ne 2 ]; then
+	echo "You need provide cluster name and ssh password"
+	exit 1
+fi
+
 ENV=$1
 PASSWORD=$2
 
