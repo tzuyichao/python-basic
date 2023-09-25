@@ -8,3 +8,4 @@ RUN pip install kafka-utils
 COPY ssh/sshconfig root/.ssh/config
 COPY cluster_data/data_gov.yaml /etc/kafka_discovery/data_gov.yml
 
+CMD ["python3"]
