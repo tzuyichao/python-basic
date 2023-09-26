@@ -29,5 +29,5 @@ START_COMMAND="/var/lib/kfk-jolokia-start.sh"
 
 sudo docker build . -t kafka-utils
 
-sudo docker run --rm kafka-utils /bin/bash -c "kafka-rolling-restart --cluster-type data_gov --cluster-name $ENV --check-interval 30 --check-count 5 --jolokia-port $JOLOKIA_PORT --ssh-password $PASSWORD --stop-command $STOP_COMMAND --start-command $START_COMMAND"
+sudo docker run --rm kafka-utils /bin/bash -c "kafka-rolling-restart --cluster-type data_gov --cluster-name $ENV -v --no-confirm --check-interval 30 --check-count 5 --jolokia-port $JOLOKIA_PORT --ssh-password $PASSWORD --stop-command $STOP_COMMAND --start-command $START_COMMAND"
 
