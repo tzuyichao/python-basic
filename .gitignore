@@ -43,3 +43,4 @@ HELP.md
 /Lib/
 venv/
 .venv
+.ipynb_checkpoints/
