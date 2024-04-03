@@ -18,9 +18,9 @@ def genertate_query(inspector, schema: str, tableName: str) -> tuple:
 
     return select_statement, pk_columns
 
-def get_data(engine, schema: str, tableName: str) -> str:
+def get_data(engine, schema: str, tableName: str) -> tuple:
     inspector = inspect(engine)
-    sql, _ = genertate_query(inspector=inspector, schema=schema, tableName=tableName)
+    sql, pk_columns = genertate_query(inspector=inspector, schema=schema, tableName=tableName)
     df = pd.read_sql_query(sql, engine)
     data = []
     for i in df.values.tolist():
@@ -29,7 +29,7 @@ def get_data(engine, schema: str, tableName: str) -> str:
     df.to_csv(output, header=False, index=False)
     result =  output.getvalue()
     output.close()
-    return result
+    return result, pk_columns
 
 
 if __name__ == '__main__':
