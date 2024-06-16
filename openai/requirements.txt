@@ -6,6 +6,7 @@ attrs==23.2.0
 certifi==2024.2.2
 chardet==5.2.0
 charset-normalizer==3.3.2
+colorama==0.4.6
 dataclasses-json==0.6.6
 defusedxml==0.7.1
 distro==1.9.0
@@ -24,12 +25,12 @@ jsonpointer==2.4
 jsonschema==4.22.0
 jsonschema-path==0.3.2
 jsonschema-specifications==2023.12.1
-langchain==0.2.3
+langchain==0.2.5
 langchain-community==0.2.5
-langchain-core==0.2.0
-langchain-openai==0.1.7
-langchain-text-splitters==0.2.0
-langsmith==0.1.60
+langchain-core==0.2.7
+langchain-openai==0.1.8
+langchain-text-splitters==0.2.1
+langsmith==0.1.77
 lazy-object-proxy==1.10.0
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
@@ -41,7 +42,7 @@ multidict==6.0.5
 mypy-extensions==1.0.0
 nest-asyncio==1.6.0
 numpy==1.26.4
-openai==1.30.1
+openai==1.34.0
 openapi-core==0.19.1
 openapi-schema-validator==0.6.2
 openapi-spec-validator==0.7.1
