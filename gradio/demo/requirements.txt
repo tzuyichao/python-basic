@@ -16,7 +16,7 @@ ffmpy==0.3.2
 filelock==3.14.0
 fonttools==4.53.0
 fsspec==2024.6.0
-gradio==4.36.1
+gradio==4.44.0
 gradio_client==1.0.1
 h11==0.14.0
 httpcore==1.0.5
