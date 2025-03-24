@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "sql-to-excel"
+version = "0.1.0"
+description = ""
+authors = ["Who <who@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.3"
+openpyxl = "^3.1.5"
+sqlalchemy = "^2.0.39"
+python-dotenv = "^1.0.1"
+pymssql = "^2.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

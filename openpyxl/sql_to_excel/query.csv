@@ -1,0 +1,3 @@
+tab_name|query
+"View1"|"SELECT category, name, statecode, statuscode, ModifiedOn FROM example1 "
+"By Category"|"SELECT id, category, name, statecode, statuscode, ModifiedOn FROM example2 WHERE category = 578580000 AND statecode = 0 AND statuscode = 1"
