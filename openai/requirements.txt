@@ -55,7 +55,7 @@ pybars4==0.9.13
 pydantic==2.7.1
 pydantic-settings==2.2.1
 pydantic_core==2.18.2
-Pygments==2.18.0
+Pygments==2.20.0
 PyMeta3==0.5.1
 pymongo==4.7.2
 python-dotenv==1.0.1
