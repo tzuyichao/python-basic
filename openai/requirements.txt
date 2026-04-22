@@ -58,7 +58,7 @@ pydantic_core==2.18.2
 Pygments==2.20.0
 PyMeta3==0.5.1
 pymongo==4.7.2
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 PyYAML==6.0.1
 referencing==0.31.1
 regex==2023.12.25
