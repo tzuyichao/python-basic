@@ -32,7 +32,7 @@ ordered-set==4.1.0
 packaging==23.1
 prison==0.2.1
 Pygments==2.20.0
-PyJWT==2.12.0
+PyJWT==2.13.0
 python-dateutil==2.8.2
 pytz==2023.3.post1
 PyYAML==6.0.1
